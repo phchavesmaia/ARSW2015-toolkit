@@ -149,7 +149,7 @@ while x<1000;                                                               % De
 % We compute residence and workplace employment via commuting probabilities using guesses of wages and floor space prices and fundamental amenity;
 % In the below matrices, we have living in i (rows) and working in j (cols);
 % Notice that _i subscripts may indicate guesses (not residence locations, e.g. for wages)
-EQQ=repmat(QT(Irsd),1,nwpl);                                                % We assign guesses of residence floor space prices to all bilaterals. We take the vector of floor space prices, generate a new vector only for observations with positive residence employment, and replicates it nwpl times to generate a nrsd x nwpl matrix
+EQQ=repmat(Q_i(Irsd),1,nwpl);                                                % We assign guesses of residence floor space prices to all bilaterals. We take the vector of floor space prices, generate a new vector only for observations with positive residence employment, and replicates it nwpl times to generate a nrsd x nwpl matrix
 EQQ=EQQ.^(-(1-beta).*epsilon);                                              % Generate the first component of bilateral commuting probabilities in Eq. 4: floor space prices to the power of (1-beta) x -epsilon 
 EBB=repmat(EB,1,nwpl);                                                      % We assign residence amenities to all bilaterals. Takes the vector of amenities for observations with positive residence emplyoment and replicates it to generate an nrds x nwpl matrix
 EBB=EBB.^epsilon;                                                           % Generates the next component of bilateral commuting probabilities: B to the power of epsilon 
