@@ -217,7 +217,7 @@ Q_e(Iis)=(((1-alpha).*Y(Iis))+((1-beta).*vv(Iis)))./LD(Iis);                % Fo
 
 % Solve for theta for which the land market clears;
 theta_e=theta_i;                                                            % Completely specialized blocks never change since amenity or productivity are zero, so predicted theta correponds guesses (initial values). We only update mixed use shares in the next line
-theta_e(Iis)=((1-alpha).*Y(Iis))./(q_e(Iis).*LD(Iis));                      % We use the facotr input demand function derived from Eq. (10). Commercial floor space input LM is (1-alpha)*Y / q. Theta is LM/LD. Combining the two we can predict the commerical floor space share for imperfectly specialized blocks using predicted outputs and rents
+theta_e(Iis)=((1-alpha).*Y(Iis))./(q_i(Iis).*LD(Iis));                      % We use the facotr input demand function derived from Eq. (10). Commercial floor space input LM is (1-alpha)*Y / q. Theta is LM/LD. Combining the two we can predict the commerical floor space share for imperfectly specialized blocks using predicted outputs and rents
 
 %%% Now we have closed to loop from guesses to predicted values of the 
 %%% target variables wage, floor space price and floor space share;
